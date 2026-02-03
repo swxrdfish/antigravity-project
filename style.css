@@ -10,7 +10,7 @@
 */
 
 /* Import Fonts from Google Fonts */
-@import url('https://fonts.google.com/specimen/Bebas+Neue');
+@import url('https://fonts.google.com/specimen/Bitcount+Single');
 
 :root {
     /* --- Dracula Dark Mode Colors (Default) --- */
@@ -28,8 +28,8 @@
     --yellow: #f1fa8c;
 
     /* --- Typography Tokens --- */
-    --font-heading: 'Outfit', sans-serif;
-    --font-body: 'Inter', sans-serif;
+    --font-heading: 'Bitcount Single', sans-serif;
+    --font-body: 'Bitcount Single', sans-serif;
 
     /* --- Spacing & UI Tokens --- */
     --space-sm: 0.5rem;
