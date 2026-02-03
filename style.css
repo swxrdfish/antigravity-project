@@ -1,0 +1,428 @@
+/*
+    ============================================================================
+    DESIGN SYSTEM - DRACULA & ALUCARD
+    ============================================================================
+    This CSS file defines our core design system using CSS variables. 
+    We use the "Dracula" palette for dark mode and "Alucard" for light mode.
+    
+    The typography choices are "Outfit" for headings and "Inter" for body,
+    providing a modern, minimalistic, and premium feel.
+*/
+
+/* Import Fonts from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700;800&display=swap');
+
+:root {
+    /* --- Dracula Dark Mode Colors (Default) --- */
+    --bg: #282a36;
+    --bg-alt: #44475a;
+    --fg: #f8f8f2;
+    --selection: #44475a;
+    --comment: #6272a4;
+    --cyan: #8be9fd;
+    --green: #50fa7b;
+    --orange: #ffb86c;
+    --pink: #ff79c6;
+    --purple: #bd93f9;
+    --red: #ff5555;
+    --yellow: #f1fa8c;
+
+    /* --- Typography Tokens --- */
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+    /* --- Spacing & UI Tokens --- */
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 2rem;
+    --space-xl: 4rem;
+    --radius: 12px;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Alucard Light Mode Overrides --- */
+[data-theme="light"] {
+    --bg: #fffbeb;
+    --bg-alt: #cfcfde;
+    --fg: #1f1f1f;
+    --selection: #cfcfde;
+    --comment: #6c664b;
+    --cyan: #036a96;
+    --green: #14710a;
+    --orange: #a34d14;
+    --pink: #a3144d;
+    --purple: #644ac9;
+    --red: #cb3a2a;
+    --yellow: #846e15;
+    --shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.1);
+}
+
+/* 
+    ============================================================================
+    BASE STYLES
+    ============================================================================
+    Resetting defaults and setting up the core layout foundation.
+*/
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    transition: var(--transition);
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--purple);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* 
+    ============================================================================
+    LAYOUT & COMPONENTS
+    ============================================================================
+*/
+
+/* --- Header & Navigation --- */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(40, 42, 54, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--bg-alt);
+    transition: var(--transition);
+}
+
+[data-theme="light"] .header {
+    background: rgba(255, 251, 235, 0.8);
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+.nav-links {
+    display: flex;
+    gap: var(--space-lg);
+}
+
+.nav-links a {
+    font-weight: 500;
+    padding: 0.5rem 0;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--pink);
+    transition: var(--transition);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* --- Theme Toggle --- */
+.theme-toggle {
+    background: none;
+    border: 2px solid var(--bg-alt);
+    color: var(--fg);
+    padding: 8px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.theme-toggle:hover {
+    border-color: var(--purple);
+    color: var(--purple);
+}
+
+.theme-toggle svg {
+    width: 20px;
+    height: 20px;
+}
+
+.sun {
+    display: none;
+}
+
+[data-theme="light"] .moon {
+    display: none;
+}
+
+[data-theme="light"] .sun {
+    display: block;
+}
+
+/* --- Hero Section --- */
+.hero {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-tagline {
+    color: var(--cyan);
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    margin-bottom: var(--space-md);
+}
+
+.hero-title {
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    margin-bottom: var(--space-md);
+}
+
+.hero-description {
+    max-width: 600px;
+    margin: 0 auto var(--space-lg);
+    font-size: 1.1rem;
+    color: var(--comment);
+}
+
+.hero-cta {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+}
+
+.btn-outline {
+    display: inline-block;
+    padding: 0.8rem 1.6rem;
+    border-radius: var(--radius);
+    border: 2px solid var(--bg-alt);
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.btn-outline:hover {
+    border-color: var(--pink);
+    color: var(--pink);
+}
+
+/* --- Section Titles --- */
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: var(--space-xl);
+    text-align: center;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 4px;
+    background: var(--pink);
+    margin: var(--space-md) auto 0;
+    border-radius: 2px;
+}
+
+/* --- About Section --- */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+    align-items: center;
+}
+
+.about-text p {
+    margin-bottom: var(--space-md);
+}
+
+.skills-card {
+    background: var(--bg-alt);
+    padding: var(--space-lg);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.skills-card h3 {
+    margin-bottom: var(--space-md);
+    color: var(--cyan);
+}
+
+.skills-card ul li {
+    margin-bottom: var(--space-sm);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.dot.purple {
+    background: var(--purple);
+}
+
+.dot.pink {
+    background: var(--pink);
+}
+
+.dot.cyan {
+    background: var(--cyan);
+}
+
+.dot.green {
+    background: var(--green);
+}
+
+/* --- Projects Section --- */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-lg);
+}
+
+.project-card {
+    background: var(--bg-alt);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: var(--transition);
+    border: 1px solid transparent;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--purple);
+    box-shadow: var(--shadow);
+}
+
+.project-thumb {
+    height: 200px;
+    background: linear-gradient(135deg, var(--bg-alt), var(--bg));
+    position: relative;
+}
+
+.project-info {
+    padding: var(--space-md);
+}
+
+.project-info h3 {
+    margin-bottom: var(--space-sm);
+}
+
+.project-tags {
+    display: flex;
+    gap: 10px;
+    margin-top: var(--space-md);
+}
+
+.project-tags span {
+    font-size: 0.8rem;
+    padding: 2px 8px;
+    background: var(--bg);
+    border-radius: 4px;
+    color: var(--cyan);
+}
+
+.placeholder .project-thumb::after {
+    content: 'Coming Soon';
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--comment);
+    font-weight: 600;
+}
+
+/* --- Contact Section --- */
+.contact-card {
+    text-align: center;
+    background: var(--bg-alt);
+    padding: var(--space-xl);
+    border-radius: var(--radius);
+}
+
+.contact-email {
+    display: block;
+    margin-top: var(--space-lg);
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    font-weight: 800;
+    color: var(--pink);
+}
+
+.contact-email:hover {
+    color: var(--purple);
+}
+
+/* --- Footer --- */
+.footer {
+    padding: var(--space-lg) 0;
+    border-top: 1px solid var(--bg-alt);
+    text-align: center;
+    color: var(--comment);
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+}

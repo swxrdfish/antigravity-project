@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevJourney | Portfolio</title>
+    <meta name="description"
+        content="A modern, minimalistic portfolio for my web development journey. Built with Dracula design system.">
+    <!-- Link to our external CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- 
+        HEADER & NAVIGATION
+        Includes the theme toggle and navigation links.
+    -->
+    <header class="header">
+        <nav class="container nav">
+            <a href="#" class="logo">Ariful<span class="text-gradient"> Karim</span></a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <!-- Theme Toggle Button -->
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark/Light Mode">
+                <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="5" />
+                    <line x1="12" y1="1" x2="12" y2="3" />
+                    <line x1="12" y1="21" x2="12" y2="23" />
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                    <line x1="1" y1="12" x2="3" y2="12" />
+                    <line x1="21" y1="12" x2="23" y2="12" />
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                </svg>
+                <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                </svg>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- 
+            HERO SECTION
+            The first thing users see. High impact typography and a clear call to action.
+        -->
+        <section class="hero container section-padding">
+            <div class="hero-content">
+                <p class="hero-tagline">Hey people I'm Ariful Karim</p>
+                <h1 class="hero-title">A Modern <br><span class="text-gradient">Web Experience</span></h1>
+                <p class="hero-description">
+                    Welcome to my web development journey. I focus on creating minimalistic,
+                    functional, and visually stunning interfaces using clean code.
+                </p>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn">View My Work</a>
+                    <a href="#contact" class="btn-outline">Get In Touch</a>
+                </div>
+            </div>
+    </main>
+
+    <!-- 
+            ABOUT SECTION
+            A brief introduction about the developer and their journey.
+        -->
+    <section id="about" class="about container section-padding">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-grid">
+            <div class="about-text">
+                <p>
+                    I'm a passionate web developer starting my journey into the world of creative coding.
+                    I believe in the power of minimalism and the importance of thorough documentation.
+                </p>
+                <p>
+                    My current stack involves learning the core of the web: HTML, CSS, and JavaScript.
+                    This site is a reflection of my growth and will evolve as I master new skills.
+                </p>
+            </div>
+            <div class="skills-card">
+                <h3>Focus Areas</h3>
+                <ul>
+                    <li><span class="dot purple"></span> Clean UI/UX Design</li>
+                    <li><span class="dot pink"></span> Semantic HTML5</li>
+                    <li><span class="dot cyan"></span> Modern CSS (Flex/Grid)</li>
+                    <li><span class="dot green"></span> Functional JavaScript</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 
+            PROJECTS SECTION
+            Showcasing work with interactive cards.
+        -->
+    <section id="projects" class="projects container section-padding">
+        <h2 class="section-title">Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-thumb"></div>
+                <div class="project-info">
+                    <h3>Portfolio v1</h3>
+                    <p>A minimalist portfolio using the Dracula color scheme.</p>
+                    <div class="project-tags">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JS</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Future projects can be added here -->
+            <div class="project-card placeholder">
+                <div class="project-thumb"></div>
+                <div class="project-info">
+                    <h3>Future Project</h3>
+                    <p>Coming soon as my skills grow...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 
+            CONTACT SECTION
+            A clear way for visitors to reach out.
+        -->
+    <section id="contact" class="contact container section-padding">
+        <div class="contact-card">
+            <h2 class="section-title">Let's Connect</h2>
+            <p>I'm always open to discussing new projects or creative ideas.</p>
+            <a href="mailto:arifulsahaf@gmail.com" class="contact-email">arifulsahaf@gmail.com</a>
+        </div>
+    </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 DevJourney. Built with 🧛 Dracula Theme.</p>
+        </div>
+    </footer>
+
+    <!-- Script to handle theme switching and interactions -->
+    <script src="script.js"></script>
+</body>
+
+</html>
