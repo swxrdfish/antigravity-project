@@ -5,12 +5,13 @@
     This CSS file defines our core design system using CSS variables. 
     We use the "Dracula" palette for dark mode and "Alucard" for light mode.
     
-    The typography choices are "Outfit" for headings and "Inter" for body,
-    providing a modern, minimalistic, and premium feel.
+    The typography choices are "Bitcount" for headings and "Audiowide" for body,
+    providing a modern, futuristic, and premium feel.
 */
 
-/* Import Fonts from Google Fonts */
-@import url('https://fonts.google.com/specimen/Bitcount+Single');
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Inter:wght@400;500;600&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/@fontsource/bitcount-grid-single/index.css');
 
 :root {
     /* --- Dracula Dark Mode Colors (Default) --- */
@@ -28,8 +29,9 @@
     --yellow: #f1fa8c;
 
     /* --- Typography Tokens --- */
-    --font-heading: 'Bitcount Single', sans-serif;
-    --font-body: 'Bitcount Single', sans-serif;
+    --font-heading: 'Bitcount Grid Single', sans-serif;
+    --font-body: 'Audiowide', cursive;
+    /* Using Audiowide for a futuristic body font */
 
     /* --- Spacing & UI Tokens --- */
     --space-sm: 0.5rem;
@@ -126,6 +128,8 @@ img {
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--bg-alt);
     transition: var(--transition);
+    font-family: var(--font-heading);
+    /* Apply Bitcount to the entire head section */
 }
 
 [data-theme="light"] .header {
