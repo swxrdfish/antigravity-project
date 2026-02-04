@@ -63,34 +63,62 @@ export function Header() {
 
             {/* Mobile Nav Overlay */}
             <div className={cn(
-                "fixed inset-0 bg-black/95 backdrop-blur-xl z-40 flex flex-col items-center justify-center transition-all duration-500 md:hidden",
+                "fixed inset-0 bg-black/98 backdrop-blur-2xl z-40 flex flex-col items-center justify-center transition-all duration-500 md:hidden",
+                "h-[100dvh] w-screen overflow-hidden",
                 isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
             )}>
-                <div className="absolute inset-0 bg-cyber-grid bg-grid opacity-20" />
+                {/* Background Grid Accent */}
+                <div className="absolute inset-0 bg-cyber-grid bg-grid opacity-10" />
 
-                <nav className="relative z-50">
-                    <ul className="flex flex-col gap-8 text-center">
-                        {navItems.map((item) => {
+                {/* Visual Accent Lines */}
+                <div className="absolute top-20 left-6 bottom-20 w-px bg-gradient-to-b from-transparent via-neon-red/20 to-transparent" />
+                <div className="absolute top-20 right-6 bottom-20 w-px bg-gradient-to-b from-transparent via-neon-red/20 to-transparent" />
+
+                <nav className="relative z-50 w-full px-12">
+                    <ul className="flex flex-col gap-6 sm:gap-10 text-center">
+                        {navItems.map((item, index) => {
                             const isActive = pathname === item.href;
                             return (
-                                <li key={item.href}>
+                                <li
+                                    key={item.href}
+                                    className={cn(
+                                        "transition-all duration-500 transform",
+                                        isOpen ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+                                    )}
+                                    style={{ transitionDelay: `${index * 100}ms` }}
+                                >
                                     <Link
                                         href={item.href}
                                         onClick={() => setIsOpen(false)}
                                         className={cn(
-                                            "text-3xl font-heading uppercase tracking-widest transition-all duration-300 block",
+                                            "text-2xl sm:text-4xl font-heading uppercase tracking-[0.2em] transition-all duration-300 block py-2",
                                             isActive
-                                                ? "text-neon-red text-shadow-neon-lg"
-                                                : "text-white hover:text-neon-red"
+                                                ? "text-neon-red text-shadow-neon-lg scale-110"
+                                                : "text-text-main hover:text-neon-red opacity-80 hover:opacity-100"
                                         )}
                                     >
-                                        {item.label}
+                                        <span className="inline-block relative">
+                                            {item.label}
+                                            {isActive && (
+                                                <span className="absolute -left-8 top-1/2 -translate-y-1/2 w-4 h-[2px] bg-neon-red shadow-neon-red animate-pulse" />
+                                            )}
+                                        </span>
                                     </Link>
                                 </li>
                             );
                         })}
                     </ul>
                 </nav>
+
+                {/* Footer hint in menu */}
+                <div className={cn(
+                    "absolute bottom-12 left-0 w-full text-center transition-all duration-700 delay-500",
+                    isOpen ? "opacity-30 translate-y-0" : "opacity-0 translate-y-4"
+                )}>
+                    <p className="font-tech text-[10px] tracking-[0.5em] text-neon-red uppercase">
+                        System Online • Secure Connection
+                    </p>
+                </div>
             </div>
         </header>
     );

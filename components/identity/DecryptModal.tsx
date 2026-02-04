@@ -23,8 +23,8 @@ export function DecryptModal({ onClose, onSuccess }: DecryptModalProps) {
     };
 
     return (
-        <div className="fixed inset-0 z-[200] flex items-center justify-center bg-black/90">
-            <div className="bg-neutral-900 border border-neon-red p-8 w-full max-w-md text-center shadow-neon-red-intense">
+        <div className="fixed inset-0 z-[200] flex items-center justify-center bg-black/95 p-4 overflow-y-auto">
+            <div className="bg-neutral-900 border border-neon-red p-6 md:p-8 w-full max-w-md text-center shadow-neon-red-intense my-auto">
                 <h2 className="font-heading text-2xl mb-2">ACCESS REQUEST</h2>
                 <p className="text-text-dim mb-6">Identity verification required.</p>
 

@@ -2,6 +2,7 @@
 
 import { useState, FormEvent } from "react";
 import { NeonButton } from "@/components/ui/NeonButton";
+import { cn } from "@/lib/utils";
 
 const topics = ['AI & AUTOMATION', 'TECHNOLOGY', 'WORLD AFFAIRS', 'BRAND & DESIGN'];
 
@@ -48,11 +49,11 @@ export function SubscriptionForm() {
                 <label className="block mb-4 text-neon-red uppercase tracking-wider">
                     SELECT INTERESTS:
                 </label>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                     {topics.map((topic) => (
                         <label
                             key={topic}
-                            className="flex items-center gap-2 cursor-pointer text-text-dim transition-colors hover:text-text-main"
+                            className="flex items-center gap-3 cursor-pointer text-text-dim transition-colors hover:text-text-main py-1"
                         >
                             <input
                                 type="checkbox"
@@ -60,9 +61,12 @@ export function SubscriptionForm() {
                                 value={topic}
                                 checked={selectedTopics.includes(topic)}
                                 onChange={() => toggleTopic(topic)}
-                                className="w-4 h-4 accent-neon-red"
+                                className="w-5 h-5 accent-neon-red flex-shrink-0"
                             />
-                            <span className={selectedTopics.includes(topic) ? 'text-neon-red' : ''}>
+                            <span className={cn(
+                                "text-xs sm:text-sm tracking-widest",
+                                selectedTopics.includes(topic) ? 'text-neon-red' : ''
+                            )}>
                                 {topic}
                             </span>
                         </label>
