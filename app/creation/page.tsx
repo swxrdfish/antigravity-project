@@ -40,8 +40,8 @@ const projects = [
 
 export default function CreationPage() {
     return (
-        <div className="container max-w-6xl mx-auto px-8 pt-32 pb-16">
-            <GlitchText className="text-5xl mb-12">DEPLOYED SYSTEMS</GlitchText>
+        <div className="container max-w-6xl mx-auto px-6 md:px-8 pt-24 md:pt-32 pb-16">
+            <GlitchText className="text-3xl md:text-5xl mb-8 md:mb-12">DEPLOYED SYSTEMS</GlitchText>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {projects.map((project) => (

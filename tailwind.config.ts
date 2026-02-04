@@ -60,12 +60,23 @@ const config: Config = {
                 scan: {
                     '0%': { top: '0%' },
                     '100%': { top: '100%' },
-                }
+                },
+                loadingBar: {
+                    '0%': { transform: 'translateX(-100%)' },
+                    '50%': { transform: 'translateX(0%)' },
+                    '100%': { transform: 'translateX(100%)' },
+                },
+                fadeInUp: {
+                    '0%': { opacity: '0', transform: 'translateY(20px)' },
+                    '100%': { opacity: '1', transform: 'translateY(0)' },
+                },
             },
             animation: {
                 'flicker': 'flicker 4s infinite alternate',
                 'neon-pulse': 'neonPulse 2s ease-in-out infinite alternate',
                 'scan-fast': 'scan 3s linear infinite',
+                'loading-bar': 'loadingBar 2s ease-in-out infinite',
+                'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
             },
         },
     },

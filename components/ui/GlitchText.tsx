@@ -11,7 +11,7 @@ interface GlitchTextProps {
 export function GlitchText({ children, className }: GlitchTextProps) {
     return (
         <h1 className={cn(
-            "font-heading uppercase tracking-wide animate-flicker",
+            "font-heading uppercase tracking-wide animate-fade-in-up",
             className
         )}>
             {children}

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function IOIPage() {
     return (
-        <div className="pt-32">
+        <div className="pt-24 md:pt-32">
             <ProfileDisplay />
         </div>
     );
