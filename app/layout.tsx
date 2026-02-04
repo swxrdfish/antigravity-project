@@ -41,7 +41,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en" className={`${orbitron.variable} ${rajdhani.variable} ${bungee.variable}`}>
-            <body className="bg-bg-primary text-text-main font-body bg-cyber-grid bg-grid overflow-x-hidden">
+            <body className="bg-bg-primary text-text-main font-body bg-cyber-grid bg-grid w-full max-w-full overflow-x-hidden">
                 <ScreenEffects />
                 <Header />
                 <main>

@@ -24,33 +24,9 @@ export function Header() {
                 </div>
             </Link>
 
-            {/* Desktop Nav */}
-            <nav className="hidden md:block">
-                <ul className="flex gap-10 list-none">
-                    {navItems.map((item) => {
-                        const isActive = pathname === item.href;
-                        return (
-                            <li key={item.href}>
-                                <Link
-                                    href={item.href}
-                                    className={cn(
-                                        "transition-all duration-300 uppercase font-heading tracking-[0.2em] text-xs",
-                                        isActive
-                                            ? "text-neon-red text-shadow-neon scale-105"
-                                            : "text-text-dim hover:text-neon-red hover:text-shadow-neon"
-                                    )}
-                                >
-                                    {item.label}
-                                </Link>
-                            </li>
-                        );
-                    })}
-                </ul>
-            </nav>
-
-            {/* Mobile Menu Toggle */}
+            {/* Universal Menu Toggle (Desktop + Mobile) */}
             <button
-                className="md:hidden z-50 text-neon-red focus:outline-none w-10 h-10 flex items-center justify-center rounded-sm border border-neon-red/10 bg-white/5 active:bg-neon-red/20 transition-colors"
+                className="z-50 text-neon-red focus:outline-none w-10 h-10 flex items-center justify-center rounded-sm border border-neon-red/10 bg-white/5 active:bg-neon-red/20 transition-colors"
                 onClick={() => setIsOpen(!isOpen)}
                 aria-label="Toggle menu"
             >
@@ -61,9 +37,9 @@ export function Header() {
                 </div>
             </button>
 
-            {/* Mobile Nav Overlay */}
+            {/* Navigation Overlay */}
             <div className={cn(
-                "fixed inset-0 bg-black/98 backdrop-blur-2xl z-40 flex flex-col items-center justify-center transition-all duration-500 md:hidden",
+                "fixed inset-0 bg-black/98 backdrop-blur-2xl z-40 flex flex-col items-center justify-center transition-all duration-500",
                 "h-[100dvh] w-full overflow-hidden",
                 isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
             )}>
