@@ -1,0 +1,46 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="glow-arch">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <linearGradient id="chairGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#0a1a20;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#000;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- High Tech Chair Back -->
+  <path d="M140,350 L140,200 Q140,100 200,80 Q260,100 260,200 L260,350 Z" fill="url(#chairGrad)" stroke="#4deeea" stroke-width="2" />
+  
+  <!-- Chair Details (Glowing strips) -->
+  <path d="M160,200 L240,200" stroke="#4deeea" stroke-width="1" opacity="0.5" />
+  <path d="M160,250 L240,250" stroke="#4deeea" stroke-width="1" opacity="0.5" />
+  <path d="M160,300 L240,300" stroke="#4deeea" stroke-width="1" opacity="0.5" />
+  
+  <!-- The Figure's Silhouette (Back/Side View) sitting -->
+  <!-- Head -->
+  <circle cx="200" cy="140" r="35" fill="#000" stroke="#4deeea" stroke-width="2" />
+  <!-- Circuitry on head -->
+  <path d="M180,140 Q200,120 220,140" fill="none" stroke="#4deeea" stroke-width="2" filter="url(#glow-arch)" />
+  
+  <!-- Shoulders/Body -->
+  <path d="M165,175 Q130,190 130,250 L130,350 L270,350 L270,250 Q270,190 235,175 Z" fill="#050505" stroke="#111" />
+  
+  <!-- Suit Lines (Tron Style) -->
+  <path d="M165,175 C165,175 180,250 180,350" fill="none" stroke="#4deeea" stroke-width="2" filter="url(#glow-arch)" />
+  <path d="M235,175 C235,175 220,250 220,350" fill="none" stroke="#4deeea" stroke-width="2" filter="url(#glow-arch)" />
+  <line x1="180" y1="220" x2="220" y2="220" stroke="#4deeea" stroke-width="2" filter="url(#glow-arch)" />
+  
+  <!-- Armrests -->
+  <path d="M120,250 L120,280 L140,280" fill="none" stroke="#4deeea" stroke-width="1" />
+  <path d="M280,250 L280,280 L260,280" fill="none" stroke="#4deeea" stroke-width="1" />
+  
+  <!-- Holographic Interface (Looking Over) -->
+  <path d="M100,380 L300,380 L320,400 L80,400 Z" fill="#4deeea" opacity="0.2" />
+  <line x1="40" y1="380" x2="360" y2="380" stroke="#4deeea" stroke-width="1" stroke-dasharray="5,5" opacity="0.5" />
+
+</svg>

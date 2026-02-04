@@ -4,145 +4,264 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XOAC</title>
-    <meta name="description"
-        content="A modern, minimalistic portfolio for my web development journey. Built with Dracula design system.">
+    <title>ARY FLYNN // GRID ACCESS</title>
+    <meta name="description" content="Ary Flynn - Digital Architect. Accessing The Grid.">
     <!-- Link to our external CSS file -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <!-- 
-        HEADER & NAVIGATION
-        Includes the theme toggle and navigation links.
-    -->
+    <!-- The Grid Background & Light Cycles -->
+    <canvas id="grid-canvas"></canvas>
+    <div class="vignette"></div>
+
     <header class="header">
         <nav class="container nav">
-            <a href="#" class="logo">Ariful<span class="text-gradient"> Karim</span></a>
+            <a href="#" class="logo">FLYNN<span class="accent-glow">_</span>SYS</a>
+            <div class="system-stats">
+                <span>CPU: <span id="cpu-load">12%</span></span>
+                <span>MEM: <span id="mem-load">45TB</span></span>
+            </div>
             <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about" class="nav-tab active" data-tab="tab-about">IDENTITY_DISK</a></li>
+                <li><a href="#projects" class="nav-tab" data-tab="tab-projects">DATA_ISLANDS</a></li>
+                <li><a href="#garage" class="nav-tab" data-tab="tab-garage">GRID_GARAGE</a></li>
+                <li><a href="#newsletter" class="nav-tab" data-tab="tab-newsletter">SYS_PATCH</a></li>
+                <li><a href="#contact" class="nav-tab" data-tab="tab-contact">I/O_PORT</a></li>
             </ul>
-            <!-- Theme Toggle Button -->
-            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark/Light Mode">
-                <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="12" cy="12" r="5" />
-                    <line x1="12" y1="1" x2="12" y2="3" />
-                    <line x1="12" y1="21" x2="12" y2="23" />
-                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
-                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-                    <line x1="1" y1="12" x2="3" y2="12" />
-                    <line x1="21" y1="12" x2="23" y2="12" />
-                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
-                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-                </svg>
-                <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-                </svg>
-            </button>
         </nav>
     </header>
 
-    <main>
-        <!-- 
-            HERO SECTION
-            The first thing users see. High impact typography and a clear call to action.
-        -->
-        <section class="hero container section-padding">
+    <main class="system-container">
+        <!-- Hero Section (Always Visible) -->
+        <section class="hero container">
+            <div class="portal-beam"></div>
             <div class="hero-content">
-                <p class="hero-tagline">Hey people I'm Ariful Karim</p>
-                <h1 class="hero-title">A AI automation<br><span class="text-gradient"> Expert</span></h1>
+                <p class="hero-tagline" id="typing-text">USER: ARY_FLYNN // ONLINE</p>
+                <h1 class="hero-title">WELCOME TO<br><span class="neon-text">THE GRID</span></h1>
                 <p class="hero-description">
-                    Welcome to my web development journey. I focus on creating minimalistic,
-                    functional, and visually stunning interfaces using clean code.
+                    DIGITAL ARCHITECT. BUILDING IMMERSIVE REALITIES IN THE VOID.
                 </p>
                 <div class="hero-cta">
-                    <a href="#projects" class="btn">View My Work</a>
-                    <a href="#contact" class="btn-outline">Get In Touch</a>
+                    <button class="btn" onclick="scrollToSystem()">ENTER SYSTEM</button>
+                    <div class="light-cycle-icon"></div>
                 </div>
             </div>
-    </main>
+        </section>
 
-    <!-- 
-            ABOUT SECTION
-            A brief introduction about the developer and their journey.
-        -->
-    <section id="about" class="about container section-padding">
-        <h2 class="section-title">About Me</h2>
-        <div class="about-grid">
-            <div class="about-text">
-                <p>
-                    I'm a passionate web developer starting my journey into the world of creative coding.
-                    I believe in the power of minimalism and the importance of thorough documentation.
-                </p>
-                <p>
-                    My current stack involves learning the core of the web: HTML, CSS, and JavaScript.
-                    This site is a reflection of my growth and will evolve as I master new skills.
-                </p>
-            </div>
-            <div class="skills-card">
-                <h3>Focus Areas</h3>
-                <ul>
-                    <li><span class="dot purple"></span> Clean UI/UX Design</li>
-                    <li><span class="dot pink"></span> Semantic HTML5</li>
-                    <li><span class="dot cyan"></span> Modern CSS (Flex/Grid)</li>
-                    <li><span class="dot green"></span> Functional JavaScript</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+        <!-- Tabbed Interface Container -->
+        <div class="folder-interface container" id="main-system">
 
-    <!-- 
-            PROJECTS SECTION
-            Showcasing work with interactive cards.
-        -->
-    <section id="projects" class="projects container section-padding">
-        <h2 class="section-title">Projects</h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <div class="project-thumb"></div>
-                <div class="project-info">
-                    <h3>Portfolio v1</h3>
-                    <p>A minimalist portfolio using the Dracula color scheme.</p>
-                    <div class="project-tags">
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JS</span>
+            <!-- Tab Headers (Mobile Fallback / Visual Decoration) -->
+            <div class="folder-tabs">
+                <div class="tab-header active">IDENTITY_DISK</div>
+                <div class="tab-header">DATA_ISLANDS</div>
+                <div class="tab-header">GRID_GARAGE</div>
+                <div class="tab-header">SYS_PATCH</div>
+            </div>
+
+            <div class="folder-content">
+
+                <!-- IDENTITY DISK (About) -->
+                <section id="tab-about" class="system-tab active-tab">
+                    <div class="about-grid">
+                        <div class="holo-frame">
+                            <div class="identity-disc-bg"></div>
+                            <img src="assets/avatar_daftpunk.svg" alt="Daft Punk" class="about-image">
+                            <div class="scan-line"></div>
+                        </div>
+                        <div class="about-text">
+                            <h2>IDENTITY: ARY FLYNN</h2>
+                            <p class="console-text">
+                                > CLASSIFICATION: PROGRAMMER<br>
+                                > SPECIALTY: AI AUTOMATION & ARCHITECTURE<br>
+                                > OBJECTIVE: OPTIMIZE DIGITAL ECOSYSTEMS
+                            </p>
+                            <p>
+                                I construct digital pathways. My code is the bridge between raw data and
+                                human perception.
+                            </p>
+                            <div class="skills-card glass">
+                                <h3>INSTALLED_MODULES</h3>
+                                <ul>
+                                    <li><span class="dot"></span> C++ / C#</li>
+                                    <li><span class="dot"></span> AI_ALGORITHMS</li>
+                                    <li><span class="dot"></span> WEB_GL</li>
+                                    <li><span class="dot"></span> SYSTEM_SECURITY</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <!-- Future projects can be added here -->
-            <div class="project-card placeholder">
-                <div class="project-thumb"></div>
-                <div class="project-info">
-                    <h3>Future Project</h3>
-                    <p>Coming soon as my skills grow...</p>
-                </div>
-            </div>
-        </div>
-    </section>
+                </section>
 
-    <!-- 
-            CONTACT SECTION
-            A clear way for visitors to reach out.
-        -->
-    <section id="contact" class="contact container section-padding">
-        <div class="contact-card">
-            <h2 class="section-title">Let's Connect</h2>
-            <p>I'm always open to discussing new projects or creative ideas.</p>
-            <a href="mailto:arifulsahaf@gmail.com" class="contact-email">arifulsahaf@gmail.com</a>
+                <!-- DATA ISLANDS (Projects) -->
+                <section id="tab-projects" class="system-tab">
+                    <h2>DATA_ISLANDS // ACTIVE</h2>
+                    <div class="projects-grid">
+                        <!-- 3D Floating Card -->
+                        <div class="project-island" style="--delay: 0s">
+                            <div class="island-content">
+                                <div class="project-thumb">
+                                    <img src="assets/ai_automation.png" alt="AI Workflow System">
+                                </div>
+                                <h3>AUTO_WORKFLOW</h3>
+                                <p>Automated logic gates for enterprise systems.</p>
+                                <div class="hex-tags">
+                                    <span>AI</span><span>DATA</span>
+                                </div>
+                            </div>
+                            <div class="island-base"></div>
+                        </div>
+
+                        <!-- 3D Floating Card -->
+                        <div class="project-island" style="--delay: 0.5s">
+                            <div class="island-content">
+                                <div class="project-thumb">
+                                    <img src="assets/ux_design.png" alt="Zen Interface">
+                                </div>
+                                <h3>ZEN_UI_KIT</h3>
+                                <p>Optimized interface protocols.</p>
+                                <div class="hex-tags">
+                                    <span>UI</span><span>GRID</span>
+                                </div>
+                            </div>
+                            <div class="island-base"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- GRID GARAGE (Vehicles) -->
+                <section id="tab-garage" class="system-tab">
+                    <h2>LIGHTCYCLE_ROSTER // AUTHORIZED_ACCESS</h2>
+                    <div class="garage-grid">
+
+                        <!-- Gen 1 -->
+                        <div class="vehicle-card" onclick="alert('LOADING SCHEMATIC: GEN_1')">
+                            <div class="holo-blueprint gen-1">
+                                <img src="assets/gen1_cycle.svg" alt="Gen 1 Schematic" class="schematic-svg">
+                                <div class="grid-floor"></div>
+                                <div class="scan-bar"></div>
+                            </div>
+                            <div class="vehicle-info">
+                                <h3>ENCOM 786 (1982)</h3>
+                                <p>The original grid-runner. Pure analogue handling.</p>
+                                <div class="stats-container">
+                                    <div class="stat-row">
+                                        <span class="stat-label">SPD</span>
+                                        <div class="stat-track">
+                                            <div class="stat-fill" style="width: 60%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="stat-row">
+                                        <span class="stat-label">AGL</span>
+                                        <div class="stat-track">
+                                            <div class="stat-fill" style="width: 40%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Gen 2 -->
+                        <div class="vehicle-card" onclick="alert('LOADING SCHEMATIC: GEN_2')">
+                            <div class="holo-blueprint gen-2">
+                                <img src="assets/gen2_cycle.svg" alt="Gen 2 Schematic" class="schematic-svg">
+                                <div class="grid-floor"></div>
+                                <div class="scan-bar"></div>
+                            </div>
+                            <div class="vehicle-info">
+                                <h3>FLYNN'S CUSTOM (2010)</h3>
+                                <p>Fifth-generation logic. Maximum velocity.</p>
+                                <div class="stats-container">
+                                    <div class="stat-row">
+                                        <span class="stat-label">SPD</span>
+                                        <div class="stat-track">
+                                            <div class="stat-fill" style="width: 90%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="stat-row">
+                                        <span class="stat-label">AGL</span>
+                                        <div class="stat-track">
+                                            <div class="stat-fill" style="width: 85%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Gen 5 -->
+                        <div class="vehicle-card" onclick="alert('LOADING SCHEMATIC: ARY_CUSTOM')">
+                            <div class="holo-blueprint gen-5">
+                                <img src="assets/gen5_cycle.svg" alt="Gen 5 Schematic" class="schematic-svg">
+                                <div class="grid-floor"></div>
+                                <div class="scan-bar"></div>
+                            </div>
+                            <div class="vehicle-info">
+                                <h3>ARY_FLYNN SPECIAL (2026)</h3>
+                                <p>Experimental prototype. Unstable but limitless.</p>
+                                <div class="stats-container">
+                                    <div class="stat-row">
+                                        <span class="stat-label">SPD</span>
+                                        <div class="stat-track">
+                                            <div class="stat-fill" style="width: 98%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="stat-row">
+                                        <span class="stat-label">AGL</span>
+                                        <div class="stat-track">
+                                            <div class="stat-fill" style="width: 95%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- SYS PATCH (Newsletter) -->
+                <section id="tab-newsletter" class="system-tab">
+                    <div class="newsletter-console">
+                        <div class="console-header">
+                            <span class="blink">●</span> SYSTEM_UPDATE_LOG
+                        </div>
+                        <div class="console-body">
+                            <p>SUBSCRIBE TO RECEIVE CRITICAL SYSTEM UPDATES AND PATCH NOTES.</p>
+                            <form class="newsletter-form"
+                                onsubmit="event.preventDefault(); alert('DATA STREAM INITIALIZED');">
+                                <input type="email" placeholder="ENTER_USER_ID@" class="neon-input">
+                                <button type="submit" class="btn-sm">INITIALIZE</button>
+                            </form>
+                            <div class="patch-notes">
+                                <p>> PATCH 1.0.4: OPTIMIZED LIGHT CYCLES</p>
+                                <p>> PATCH 1.0.5: ENHANCED NEON RENDERING</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- I/O PORT (Contact) -->
+                <section id="tab-contact" class="system-tab">
+                    <div class="contact-card glass">
+                        <h2>SECURE_CONNECTION</h2>
+                        <div class="email-reveal-wrapper">
+                            <button id="reveal-btn" class="btn">DECRYPT EMAIL TARGET</button>
+                            <a href="mailto:arifulsahaf@gmail.com" id="contact-email"
+                                class="contact-email hidden">arifulsahaf@gmail.com</a>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
         </div>
-    </section>
     </main>
 
     <footer class="footer">
         <div class="container footer-content">
-            <p>&copy; XOAC.</p>
+            <p>END_OF_LINE_ // &copy; <span id="current-year"></span> ARY FLYNN.</p>
         </div>
     </footer>
 
-    <!-- Script to handle theme switching and interactions -->
     <script src="script.js"></script>
 </body>
 

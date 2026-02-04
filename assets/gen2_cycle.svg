@@ -1,0 +1,42 @@
+<svg viewBox="0 0 500 250" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="legacyGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#000;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#0a1a20;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#000;stop-opacity:1" />
+    </linearGradient>
+    <filter id="legacyGlow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Rear Hubless Wheel -->
+  <circle cx="120" cy="160" r="55" fill="none" stroke="#00f3ff" stroke-width="6" filter="url(#legacyGlow)" />
+  <circle cx="120" cy="160" r="45" fill="none" stroke="#000" stroke-width="10" /> <!-- Negative space -->
+  
+  <!-- Front Hubless Wheel -->
+  <circle cx="380" cy="160" r="55" fill="none" stroke="#00f3ff" stroke-width="6" filter="url(#legacyGlow)" />
+  <circle cx="380" cy="160" r="45" fill="none" stroke="#000" stroke-width="10" /> 
+  
+  <!-- Main Body (Curved) -->
+  <path d="M120,160 
+           Q150,60 250,50 
+           Q350,60 380,160 
+           L330,200 
+           Q250,180 170,200 
+           Z" 
+        fill="url(#legacyGrad)" stroke="#00f3ff" stroke-width="2" />
+
+  <!-- Engine Light Strip -->
+  <path d="M180,180 Q250,160 320,180" fill="none" stroke="#00f3ff" stroke-width="3" filter="url(#legacyGlow)" />
+  
+  <!-- Cockpit Glow -->
+  <ellipse cx="250" cy="100" rx="40" ry="10" fill="#00f3ff" opacity="0.2" filter="url(#legacyGlow)" />
+  
+  <!-- Ground Reflection -->
+  <ellipse cx="250" cy="225" rx="150" ry="10" fill="#00f3ff" opacity="0.1" />
+</svg>

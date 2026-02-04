@@ -1,0 +1,37 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="glow-helmet">
+      <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <linearGradient id="visorglow" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#00f3ff;stop-opacity:0.8" />
+        <stop offset="50%" style="stop-color:#fff;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#00f3ff;stop-opacity:0.8" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Helmet Background/Hood -->
+  <path d="M100,350 L100,150 Q100,50 200,50 Q300,50 300,150 L300,350 L250,380 L150,380 Z" fill="#050505" stroke="#111" stroke-width="2" />
+  
+  <!-- Visor Area -->
+  <path d="M110,160 Q110,70 200,70 Q290,70 290,160 L290,280 Q290,320 200,320 Q110,320 110,280 Z" fill="#000" />
+  
+  <!-- The Glowing "T" / Strip -->
+  <path d="M130,160 C130,160 200,200 270,160" fill="none" stroke="url(#visorglow)" stroke-width="6" filter="url(#glow-helmet)" stroke-linecap="round" />
+  <line x1="120" y1="180" x2="280" y2="180" stroke="#00f3ff" stroke-width="2" opacity="0.3" />
+  
+  <!-- Chin Guard -->
+  <path d="M150,320 L250,320 L240,360 L160,360 Z" fill="#111" stroke="#333" />
+  
+  <!-- Side Lights -->
+  <circle cx="90" cy="200" r="10" fill="#00f3ff" filter="url(#glow-helmet)" opacity="0.6"/>
+  <circle cx="310" cy="200" r="10" fill="#00f3ff" filter="url(#glow-helmet)" opacity="0.6"/>
+  
+  <!-- Identity Disc Reflection (Subtle) -->
+  <path d="M190,40 L210,40 L205,30 L195,30 Z" fill="#00f3ff" filter="url(#glow-helmet)" />
+
+</svg>

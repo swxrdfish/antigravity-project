@@ -1,0 +1,39 @@
+<svg viewBox="0 0 500 250" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="conceptGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a0f00;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#331a00;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#000;stop-opacity:1" />
+    </linearGradient>
+    <filter id="conceptGlow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Aggressive Front Wheel (Split) -->
+  <path d="M350,120 L450,120 L420,190 L320,190 Z" fill="none" stroke="#ff9d00" stroke-width="4" filter="url(#conceptGlow)" />
+  <path d="M355,125 L445,125 L418,185 L328,185 Z" fill="#ff9d00" opacity="0.1" />
+
+  <!-- Rear Wheel (Wide) -->
+  <path d="M50,120 L150,120 L180,190 L80,190 Z" fill="none" stroke="#ff9d00" stroke-width="4" filter="url(#conceptGlow)" />
+  
+  <!-- Body (Jagged/Stealth) -->
+  <path d="M80,190 L200,90 L300,90 L420,190 L320,210 L180,210 Z" fill="url(#conceptGrad)" stroke="#ff9d00" stroke-width="2" />
+  
+  <!-- Internal Energy Core -->
+  <circle cx="250" cy="150" r="20" fill="#ff9d00" opacity="0.8" filter="url(#conceptGlow)" />
+  <circle cx="250" cy="150" r="30" fill="none" stroke="#ff9d00" stroke-width="1" stroke-dasharray="5,5" >
+      <animateTransform attributeName="transform" type="rotate" from="0 250 150" to="360 250 150" dur="4s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- Speed Lines -->
+  <line x1="200" y1="90" x2="150" y2="60" stroke="#ff9d00" stroke-width="1" opacity="0.5" />
+  <line x1="300" y1="90" x2="350" y2="60" stroke="#ff9d00" stroke-width="1" opacity="0.5" />
+  
+  <!-- Ground Effect -->
+  <path d="M100,220 L400,220" stroke="#ff9d00" stroke-width="2" stroke-linecap="round" opacity="0.5" filter="url(#conceptGlow)" />
+</svg>

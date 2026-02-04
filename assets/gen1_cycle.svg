@@ -1,0 +1,41 @@
+<svg viewBox="0 0 500 250" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00111a;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#00334d;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00111a;stop-opacity:1" />
+    </linearGradient>
+    <filter id="neonGlow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Back Wheel -->
+  <circle cx="100" cy="180" r="45" fill="#000" stroke="#00f3ff" stroke-width="4" filter="url(#neonGlow)" />
+  <circle cx="100" cy="180" r="35" fill="none" stroke="#00f3ff" stroke-width="1" opacity="0.5" />
+  
+  <!-- Front Wheel -->
+  <circle cx="400" cy="180" r="45" fill="#000" stroke="#00f3ff" stroke-width="4" filter="url(#neonGlow)" />
+  <circle cx="400" cy="180" r="35" fill="none" stroke="#00f3ff" stroke-width="1" opacity="0.5" />
+
+  <!-- Connecting Chassis -->
+  <path d="M100,180 L400,180 L400,135 L350,80 L150,80 L100,135 Z" fill="url(#bodyGrad)" stroke="#00f3ff" stroke-width="2" />
+  
+  <!-- 1982 Canopy / Top Shell -->
+  <path d="M140,80 L360,80 L380,130 L120,130 Z" fill="#000" stroke="#00f3ff" stroke-width="2" opacity="0.9" />
+  <path d="M180,80 L320,80" fill="none" stroke="#fff" stroke-width="2" filter="url(#neonGlow)" /> <!-- Top Highlight -->
+  
+  <!-- Side Panels -->
+  <rect x="160" y="140" width="180" height="30" fill="none" stroke="#00f3ff" stroke-width="1" rx="5" />
+  
+  <!-- Rider Silhouette (Abstract) -->
+  <path d="M220,90 Q250,85 280,90 L290,120 L210,120 Z" fill="#00f3ff" opacity="0.3" />
+
+  <!-- Speed Trail -->
+  <path d="M100,190 L-100,190" stroke="#00f3ff" stroke-width="4" stroke-dasharray="20,10" opacity="0.6" />
+  <path d="M100,200 L-50,200" stroke="#00f3ff" stroke-width="2" stroke-dasharray="10,20" opacity="0.4" />
+</svg>
