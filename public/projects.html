@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SXRDFISH | PROJECTS</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background: #0a0a0a;
+            border: 1px solid #222;
+            position: relative;
+            overflow: hidden;
+            height: 300px;
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+
+        .project-card:hover {
+            border-color: var(--primary-red);
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.2);
+        }
+
+        .project-image {
+            height: 60%;
+            background: #111;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #444;
+            font-size: 2rem;
+        }
+
+        .project-info {
+            padding: 1.5rem;
+        }
+
+        .project-info h3 {
+            margin: 0;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .project-info p {
+            font-size: 0.9rem;
+            color: #888;
+            margin: 0;
+        }
+
+        .tags {
+            margin-top: 1rem;
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            font-size: 0.7rem;
+            border: 1px solid #444;
+            padding: 2px 8px;
+            border-radius: 4px;
+            color: var(--primary-red);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="brand">GRID</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="projects.html" class="active" style="color:var(--primary-red)">PROJECTS</a></li>
+                <li><a href="identity.html">IDENTITY</a></li>
+                <li><a href="newsletter.html">NEWSLETTER</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1 class="glitch-text">DEPLOYED SYSTEMS</h1>
+        <div class="projects-grid">
+            <!-- Project 1 -->
+            <div class="project-card">
+                <div class="project-image">Brand.AI</div>
+                <div class="project-info">
+                    <h3>AI BRAND AUTOMATION</h3>
+                    <p>Automated workflow system for scalable brand identity management.</p>
+                    <div class="tags">
+                        <span class="tag">PYTHON</span>
+                        <span class="tag">AI AGENTS</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 2 -->
+            <div class="project-card">
+                <div class="project-image">Content.Flow</div>
+                <div class="project-info">
+                    <h3>CONTENT GENERATOR</h3>
+                    <p>End-to-end pipeline for social media asset creation.</p>
+                    <div class="tags">
+                        <span class="tag">NODE.JS</span>
+                        <span class="tag">OPENAI</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 3 -->
+            <div class="project-card">
+                <div class="project-image">Mod.Bot</div>
+                <div class="project-info">
+                    <h3>SOCIAL MODERATOR</h3>
+                    <p>Real-time comment analysis and moderation bot.</p>
+                    <div class="tags">
+                        <span class="tag">NLP</span>
+                        <span class="tag">AUTOMATION</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 4 -->
+            <div class="project-card">
+                <div class="project-image">UX.System</div>
+                <div class="project-info">
+                    <h3>DYNAMIC UX</h3>
+                    <p>Adaptive user interface system for web platforms.</p>
+                    <div class="tags">
+                        <span class="tag">REACT</span>
+                        <span class="tag">DESIGN</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

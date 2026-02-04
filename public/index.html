@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SXRDFISH | PORTFOLIO</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .hero {
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 5rem;
+            margin: 0;
+            line-height: 1;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            letter-spacing: 5px;
+            color: var(--primary-red);
+            margin-top: 1rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .card {
+            background: rgba(10, 10, 10, 0.8);
+            border: 1px solid #333;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: var(--primary-red);
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(255, 0, 0, 0.1);
+        }
+
+        .card h3 {
+            color: var(--primary-red);
+        }
+
+        /* Temporary Placeholder for BG until image generated */
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: radial-gradient(circle at center, rgba(20, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 90%);
+            opacity: 0.5;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="brand">GRID</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="projects.html">PROJECTS</a></li>
+                <li><a href="identity.html">IDENTITY</a></li>
+                <li><a href="newsletter.html">NEWSLETTER</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <div class="hero-bg"></div>
+        <h1 class="glitch-text">WELCOME TO<br>MY GRID</h1>
+        <p>AI ARCHITECT • CREATIVE TECHNOLOGIST • BRAND BUILDER</p>
+    </div>
+
+    <div class="container">
+        <h2>CORE SERVICES</h2>
+        <div class="services-grid">
+            <div class="card">
+                <h3>AI AUTOMATION</h3>
+                <p>Streamlining workflows with intelligent agents and systems.</p>
+            </div>
+            <div class="card">
+                <h3>BRAND BUILDING</h3>
+                <p>Forging identities that resonate in the digital noise.</p>
+            </div>
+            <div class="card">
+                <h3>UX/UI DESIGN</h3>
+                <p>Interfaces that feel like the future, today.</p>
+            </div>
+            <div class="card">
+                <h3>WEB DEV</h3>
+                <p>Full-stack dynamic platforms built for scale.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 SXRDFISH. ALL RIGHTS RESERVED.</p>
+    </footer>
+
+</body>
+
+</html>

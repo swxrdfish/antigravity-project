@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SXRDFISH | IDENTITY</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .identity-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 80vh;
+            gap: 4rem;
+        }
+
+        .avatar-frame {
+            width: 300px;
+            height: 300px;
+            border: 2px solid var(--primary-red);
+            border-radius: 50%;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 0 20px var(--glow-red);
+        }
+
+        .avatar-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%);
+            transition: 1s ease;
+        }
+
+        .profile-data h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-data h2 {
+            color: var(--primary-red);
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            letter-spacing: 3px;
+        }
+
+        .encrypted-blur {
+            filter: blur(5px);
+            user-select: none;
+            opacity: 0.5;
+        }
+
+        .decrypt-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 200;
+        }
+
+        .decrypt-form {
+            background: #111;
+            border: 1px solid var(--primary-red);
+            padding: 2rem;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 0 30px var(--glow-red);
+        }
+
+        .input-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--primary-red);
+        }
+
+        .input-group input,
+        .input-group select {
+            width: 100%;
+            background: #000;
+            border: 1px solid #333;
+            color: #fff;
+            padding: 0.8rem;
+            font-family: var(--font-body);
+            box-sizing: border-box;
+        }
+
+        .input-group input:focus {
+            border-color: var(--primary-red);
+            outline: none;
+        }
+
+        /* Success Animation State */
+        .identity-container.decrypted .avatar-frame img {
+            filter: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="brand">GRID</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="projects.html">PROJECTS</a></li>
+                <li><a href="identity.html" class="active" style="color:var(--primary-red)">IDENTITY</a></li>
+                <li><a href="newsletter.html">NEWSLETTER</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container identity-container" id="profileView">
+        <div class="avatar-frame">
+            <!-- Placeholder for Avatar -->
+            <div
+                style="width:100%; height:100%; background:#111; display:flex; align-items:center; justify-content:center; color:#333;">
+                ENCRYPTED
+            </div>
+        </div>
+        <div class="profile-data">
+            <h1 id="nameDisplay">ARY FLYNN</h1>
+            <h2 id="aliasDisplay">CODENAME: UNKNOWN</h2>
+
+            <div id="encryptedContent" class="encrypted-blur">
+                <p>CONTACT: [REDACTED]</p>
+                <p>EDUCATION: [REDACTED]</p>
+                <p>LOCATION: [REDACTED]</p>
+            </div>
+
+            <div id="decryptedContent" style="display:none; margin-top: 2rem;">
+                <p><strong>EMAIL:</strong> arifulsahaf@gmail.com</p>
+                <p><strong>PHONE:</strong> +8801640542998</p>
+                <p><strong>EDUCATION:</strong> Undergraduate @ East West University</p>
+                <br>
+                <div style="display:flex; gap:1rem;">
+                    <a href="#" class="btn-neon">LINKEDIN</a>
+                    <a href="#" class="btn-neon">GITHUB</a>
+                </div>
+            </div>
+
+            <br>
+            <button id="decryptBtn" class="btn-neon">INITIATE DECRYPTION</button>
+        </div>
+    </div>
+
+    <!-- Decryption Modal -->
+    <div class="decrypt-overlay" id="decryptModal">
+        <div class="decrypt-form">
+            <h2>ACCESS REQUEST</h2>
+            <p style="margin-bottom:1rem; color:#888;">Identity verification required.</p>
+            <form id="accessForm">
+                <div class="input-group">
+                    <label>CODENAME / NAME</label>
+                    <input type="text" id="visitorName" required>
+                </div>
+                <div class="input-group">
+                    <label>COMMS LINK / EMAIL</label>
+                    <input type="email" id="visitorEmail" required>
+                </div>
+                <div class="input-group">
+                    <label>PURPOSE</label>
+                    <select id="visitorPurpose">
+                        <option>Business Inquiry</option>
+                        <option>Collaboration</option>
+                        <option>Recruitment</option>
+                        <option>Just Curious</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-neon" style="width:100%">DECRYPT IDENTITY</button>
+                <button type="button" id="closeModal"
+                    style="background:none; border:none; color:#555; margin-top:1rem; cursor:pointer;">CANCEL</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/decrypt.js"></script>
+</body>
+
+</html>
