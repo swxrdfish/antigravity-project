@@ -24,26 +24,28 @@ export default function HomePage() {
     return (
         <>
             {/* Hero Section */}
-            <div className="h-[90vh] flex flex-col justify-center items-center text-center relative">
+            <div className="h-[100dvh] flex flex-col justify-center items-center text-center relative overflow-hidden">
                 {/* Background gradient */}
-                <div className="absolute top-0 left-0 w-full h-full -z-10 opacity-50 bg-gradient-radial from-red-950/0 via-black/50 to-black" />
+                <div className="absolute inset-0 -z-10 opacity-60 bg-gradient-radial from-red-950/20 via-black to-black" />
 
-                <GlitchText className="text-4xl md:text-7xl mb-2 md:mb-0 leading-tight md:leading-none px-4">
+                <GlitchText className="text-[clamp(2.25rem,12vw,4.5rem)] mb-4 md:mb-0 leading-[1.1] md:leading-none px-6">
                     WELCOME TO<br />MY GRID
                 </GlitchText>
-                <p className="text-sm md:text-xl tracking-[3px] md:tracking-[5px] text-neon-red mt-4 px-4 font-bold">
-                    AI ARCHITECT • CREATIVE TECHNOLOGIST • BRAND BUILDER
+                <p className="text-[clamp(0.6rem,3vw,1.25rem)] tracking-[0.3em] md:tracking-[0.5em] text-neon-red mt-6 px-8 font-bold uppercase opacity-90 max-w-lg">
+                    AI Architect • Creative Technologist • Brand Builder
                 </p>
             </div>
 
             {/* Services Section */}
-            <div className="max-w-6xl mx-auto px-6 md:px-8 pt-16 md:pt-24 pb-16">
-                <h2 className="font-heading text-3xl uppercase tracking-wider mb-16">CORE SERVICES</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="max-w-6xl mx-auto px-6 md:px-8 py-20 md:py-32">
+                <h2 className="font-heading text-2xl md:text-3xl uppercase tracking-[0.3em] mb-12 md:mb-16 text-center md:text-left">
+                    CORE SERVICES
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
                     {services.map((service) => (
-                        <Card key={service.title} className="bg-black/80 border border-neutral-700 p-8">
-                            <h3 className="text-neon-red font-heading text-lg mb-3">{service.title}</h3>
-                            <p className="text-text-dim text-sm">{service.description}</p>
+                        <Card key={service.title} className="bg-black/90 border border-neutral-800 p-6 md:p-8 backdrop-blur-sm">
+                            <h3 className="text-neon-red font-heading text-base md:text-lg mb-4 tracking-wider">{service.title}</h3>
+                            <p className="text-text-dim text-sm leading-relaxed">{service.description}</p>
                         </Card>
                     ))}
                 </div>

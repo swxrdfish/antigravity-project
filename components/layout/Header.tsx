@@ -17,16 +17,16 @@ export function Header() {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <header className="fixed top-0 w-full z-50 flex items-center justify-between px-6 md:px-16 py-6 md:py-8 backdrop-blur-md border-b border-neon-red/10 bg-black/50">
+        <header className="fixed top-0 w-full z-50 flex items-center justify-between px-5 md:px-16 py-4 md:py-6 backdrop-blur-2xl border-b border-neon-red/10 bg-black/90">
             <Link href="/" onClick={() => setIsOpen(false)}>
-                <div className="font-brand text-xl md:text-2xl text-neon-red text-shadow-neon-lg animate-neon-pulse z-50 relative">
+                <div className="font-brand text-base md:text-2xl text-neon-red text-shadow-neon-lg animate-neon-pulse z-50 relative tracking-[0.2em]">
                     GRID
                 </div>
             </Link>
 
             {/* Desktop Nav */}
             <nav className="hidden md:block">
-                <ul className="flex gap-8 list-none">
+                <ul className="flex gap-10 list-none">
                     {navItems.map((item) => {
                         const isActive = pathname === item.href;
                         return (
@@ -34,9 +34,9 @@ export function Header() {
                                 <Link
                                     href={item.href}
                                     className={cn(
-                                        "transition-all duration-300 uppercase font-heading tracking-wider text-sm",
+                                        "transition-all duration-300 uppercase font-heading tracking-[0.2em] text-xs",
                                         isActive
-                                            ? "text-neon-red text-shadow-neon"
+                                            ? "text-neon-red text-shadow-neon scale-105"
                                             : "text-text-dim hover:text-neon-red hover:text-shadow-neon"
                                     )}
                                 >
@@ -50,21 +50,21 @@ export function Header() {
 
             {/* Mobile Menu Toggle */}
             <button
-                className="md:hidden z-50 text-neon-red focus:outline-none"
+                className="md:hidden z-50 text-neon-red focus:outline-none w-10 h-10 flex items-center justify-center rounded-sm border border-neon-red/10 bg-white/5 active:bg-neon-red/20 transition-colors"
                 onClick={() => setIsOpen(!isOpen)}
                 aria-label="Toggle menu"
             >
-                <div className="w-8 h-8 flex flex-col justify-center gap-1.5">
-                    <span className={cn("block w-full h-0.5 bg-neon-red transition-all duration-300", isOpen && "rotate-45 translate-y-2")} />
-                    <span className={cn("block w-full h-0.5 bg-neon-red transition-all duration-300", isOpen && "opacity-0")} />
-                    <span className={cn("block w-full h-0.5 bg-neon-red transition-all duration-300", isOpen && "-rotate-45 -translate-y-2")} />
+                <div className="w-5 h-4 flex flex-col justify-between items-center transition-all duration-300">
+                    <span className={cn("block w-full h-0.5 bg-neon-red transition-all duration-300", isOpen ? "rotate-45 translate-y-[7px]" : "")} />
+                    <span className={cn("block w-full h-0.5 bg-neon-red transition-all duration-300", isOpen ? "opacity-0 scale-0" : "")} />
+                    <span className={cn("block w-full h-0.5 bg-neon-red transition-all duration-300", isOpen ? "-rotate-45 -translate-y-[7px]" : "")} />
                 </div>
             </button>
 
             {/* Mobile Nav Overlay */}
             <div className={cn(
                 "fixed inset-0 bg-black/98 backdrop-blur-2xl z-40 flex flex-col items-center justify-center transition-all duration-500 md:hidden",
-                "h-[100dvh] w-screen overflow-hidden",
+                "h-[100dvh] w-full overflow-hidden",
                 isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
             )}>
                 {/* Background Grid Accent */}

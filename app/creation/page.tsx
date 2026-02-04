@@ -40,24 +40,26 @@ const projects = [
 
 export default function CreationPage() {
     return (
-        <div className="container max-w-6xl mx-auto px-6 md:px-8 pt-24 md:pt-32 pb-16">
-            <GlitchText className="text-3xl md:text-5xl mb-8 md:mb-12">DEPLOYED SYSTEMS</GlitchText>
+        <div className="container max-w-6xl mx-auto px-6 md:px-8 pt-24 md:pt-32 pb-24">
+            <GlitchText className="text-[clamp(1.75rem,8vw,3rem)] mb-10 md:mb-16 text-center md:text-left">
+                DEPLOYED SYSTEMS
+            </GlitchText>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
                 {projects.map((project) => (
                     <Card
                         key={project.id}
-                        className="bg-[#0a0a0a] border border-neutral-800 h-[300px] cursor-pointer overflow-hidden"
+                        className="bg-black/80 border border-neutral-800 h-auto md:h-[320px] cursor-pointer overflow-hidden group hover:border-neon-red/50 transition-all duration-500"
                     >
                         {/* Project Image Placeholder */}
-                        <div className="h-3/5 bg-neutral-900 flex items-center justify-center text-neutral-700 text-2xl">
+                        <div className="h-40 md:h-2/5 bg-neutral-900/50 flex items-center justify-center text-neutral-700 text-xl font-heading tracking-widest group-hover:bg-neon-red/5 transition-colors duration-500">
                             {project.shortName}
                         </div>
 
                         {/* Project Info */}
-                        <div className="p-6">
-                            <h3 className="font-heading text-white mb-2">{project.title}</h3>
-                            <p className="text-sm text-text-dim mb-3">{project.description}</p>
+                        <div className="p-6 md:p-8">
+                            <h3 className="font-heading text-lg text-white mb-2 tracking-wide">{project.title}</h3>
+                            <p className="text-sm text-text-dim mb-4 leading-relaxed">{project.description}</p>
 
                             {/* Tags */}
                             <div className="flex gap-2 flex-wrap">

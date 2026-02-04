@@ -37,10 +37,10 @@ export function ProfileDisplay() {
     };
 
     return (
-        <div className="container max-w-6xl mx-auto px-6 md:px-8 pb-16">
-            <div className="flex flex-col md:flex-row items-center justify-center gap-10 md:gap-16 min-h-[80vh] py-12 md:py-0">
+        <div className="container max-w-6xl mx-auto px-6 md:px-8 pb-20">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-10 md:gap-20 min-h-[70vh] py-16 md:py-0">
                 {/* Avatar Frame */}
-                <div className="w-[220px] h-[220px] md:w-[300px] md:h-[300px] border-2 border-neon-red rounded-full overflow-hidden relative shadow-neon-red flex-shrink-0">
+                <div className="w-[clamp(180px,50vw,300px)] h-[clamp(180px,50vw,300px)] border-2 border-neon-red rounded-full overflow-hidden relative shadow-neon-red flex-shrink-0">
                     <div
                         className={`w-full h-full flex items-center justify-center bg-neutral-900 text-neutral-700 font-heading text-lg md:text-xl transition-all duration-1000 ${isDecrypted ? 'filter-none' : 'blur-sm opacity-50 select-none'
                             }`}
@@ -51,11 +51,11 @@ export function ProfileDisplay() {
 
                 {/* Profile Data */}
                 <div className="profile-data text-center md:text-left">
-                    <h1 className="font-heading text-3xl md:text-5xl mb-2">
+                    <h1 className="font-heading text-[clamp(1.75rem,8vw,3.5rem)] mb-3 leading-tight">
                         {isDecrypted ? profileData.decrypted.name : profileData.encrypted.name}
                     </h1>
                     <h2
-                        className={`font-heading text-lg md:text-2xl mb-8 tracking-widest ${isDecrypted ? 'text-text-main' : 'text-neon-red'
+                        className={`font-heading text-[clamp(1rem,4vw,1.5rem)] mb-10 tracking-[0.2em] ${isDecrypted ? 'text-text-main' : 'text-neon-red'
                             }`}
                     >
                         {isDecrypted ? `ALIAS: ${profileData.decrypted.alias}` : profileData.encrypted.alias}

@@ -25,7 +25,7 @@ export function ScreenEffects() {
             <div className="absolute inset-0 bg-transparent animate-flicker pointer-events-none opacity-[0.01]" />
 
             {/* Bright Scan Line Beam */}
-            <div className="absolute w-full h-[5px] bg-cyan-400/20 shadow-[0_0_10px_rgba(77,238,234,0.4)] animate-scan-fast" />
+            <div className="absolute w-full h-[2px] md:h-[5px] bg-neon-red/20 shadow-[0_0_15px_rgba(255,26,26,0.4)] animate-scan-fast" />
         </div>
     );
 }

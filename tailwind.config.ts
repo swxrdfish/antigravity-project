@@ -29,6 +29,8 @@ const config: Config = {
             },
             backgroundImage: {
                 'cyber-grid': 'linear-gradient(#1a1a1a 1px, transparent 1px), linear-gradient(90deg, #1a1a1a 1px, transparent 1px)',
+                'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
             },
             backgroundSize: {
                 'grid': '50px 50px',
