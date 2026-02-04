@@ -37,10 +37,7 @@ const config: Config = {
                 'neon-red': '0 0 10px rgba(255, 26, 26, 0.6), 0 0 20px rgba(255, 26, 26, 0.6)',
                 'neon-red-intense': '0 0 10px rgba(255, 26, 26, 0.6), 0 0 20px rgba(255, 26, 26, 0.6), 0 0 40px rgba(255, 26, 26, 0.6)',
             },
-            animation: {
-                'flicker': 'flicker 4s infinite alternate',
-                'neon-pulse': 'neonPulse 2s ease-in-out infinite alternate',
-            },
+
             keyframes: {
                 flicker: {
                     '0%, 19%, 21%, 23%, 25%, 54%, 56%, 100%': {
