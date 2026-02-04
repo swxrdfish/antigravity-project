@@ -4,6 +4,8 @@ import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 
+import { ScreenEffects } from "@/components/layout/ScreenEffects";
+
 // Configure fonts
 const orbitron = Orbitron({
     subsets: ['latin'],
@@ -40,6 +42,7 @@ export default function RootLayout({
     return (
         <html lang="en" className={`${orbitron.variable} ${rajdhani.variable} ${bungee.variable}`}>
             <body className="bg-bg-primary text-text-main font-body bg-cyber-grid bg-grid overflow-x-hidden">
+                <ScreenEffects />
                 <Header />
                 <main>
                     {children}

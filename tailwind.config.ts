@@ -60,6 +60,15 @@ const config: Config = {
                         textShadow: '0 0 10px rgba(255, 26, 26, 0.6), 0 0 20px rgba(255, 26, 26, 0.6), 0 0 40px rgba(255, 26, 26, 0.6), 0 0 60px rgba(255, 26, 26, 0.6)',
                     },
                 },
+                scan: {
+                    '0%': { top: '0%' },
+                    '100%': { top: '100%' },
+                }
+            },
+            animation: {
+                'flicker': 'flicker 4s infinite alternate',
+                'neon-pulse': 'neonPulse 2s ease-in-out infinite alternate',
+                'scan-fast': 'scan 3s linear infinite',
             },
         },
     },
