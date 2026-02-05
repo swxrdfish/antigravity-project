@@ -39,11 +39,12 @@ export function Header() {
 
             {/* Navigation Overlay */}
             <div className={cn(
-                "fixed inset-0 bg-black/98 backdrop-blur-2xl z-40 flex flex-col items-center justify-center transition-all duration-500",
-                "h-[100dvh] w-full overflow-hidden",
+                "fixed inset-0 bg-black/40 backdrop-blur-[20px] backdrop-saturate-150 z-40 flex flex-col items-center justify-center transition-all duration-500",
+                "h-[100dvh] w-full overflow-hidden border-x border-white/5",
                 isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
             )}>
-                {/* Background Grid Accent */}
+                {/* Background Glass Accent */}
+                <div className="absolute inset-0 bg-gradient-radial from-white/5 to-transparent opacity-50" />
                 <div className="absolute inset-0 bg-cyber-grid bg-grid opacity-10" />
 
                 {/* Visual Accent Lines */}
