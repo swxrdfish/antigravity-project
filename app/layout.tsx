@@ -29,8 +29,8 @@ const bungee = Bungee({
 });
 
 export const metadata: Metadata = {
-    title: "SXRDFISH | PORTFOLIO",
-    description: "AI Architect • Creative Technologist • Brand Builder",
+    title: "SXRDFISH | GRID",
+    description: "AI Expert • Thinker • Creator",
     keywords: ["AI", "automation", "web development", "portfolio", "brand building", "UX/UI"],
 };
 

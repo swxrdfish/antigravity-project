@@ -9,7 +9,7 @@ const navItems = [
     { href: "/", label: "CORE" },
     { href: "/creation", label: "CREATION" },
     { href: "/ioi", label: "IOI" },
-    { href: "/newsletter", label: "NEWSLETTER" },
+    { href: "/newsletter", label: "SUB" },
 ];
 
 export function Header() {

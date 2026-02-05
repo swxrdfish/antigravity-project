@@ -43,10 +43,10 @@ export default function HomePage() {
                 <div className="absolute inset-0 -z-10 opacity-60 bg-gradient-radial from-red-950/20 via-black to-black" />
 
                 <GlitchText className="text-[clamp(2.25rem,12vw,4.5rem)] mb-4 md:mb-0 leading-[1.1] md:leading-none px-6">
-                    WELCOME TO<br />MY GRID
+                    WELCOME TO<br />GRID
                 </GlitchText>
-                <p className="text-[clamp(0.6rem,3vw,1.25rem)] tracking-[0.3em] md:tracking-[0.5em] text-neon-red mt-6 px-8 font-bold uppercase opacity-90 max-w-lg">
-                    AI Architect • Creative Technologist • Brand Builder
+                <p className="text-[clamp(0.6rem,3vw,1.25rem)] tracking-[0.3em] md:tracking-[0.5em] text-neon-red mt-6 px-8 font-bold opacity-90 max-w-lg">
+                    AI Expert • Thinker • Creator{" "}
                 </p>
             </div>
 
