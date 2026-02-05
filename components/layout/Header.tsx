@@ -39,7 +39,7 @@ export function Header() {
 
             {/* Navigation Overlay */}
             <div className={cn(
-                "fixed inset-0 bg-black/40 backdrop-blur-[20px] backdrop-saturate-150 z-40 flex flex-col items-center justify-center transition-all duration-500",
+                "fixed inset-0 bg-black/40 backdrop-blur-[40px] backdrop-saturate-150 z-40 flex flex-col items-center justify-center transition-all duration-500",
                 "h-[100dvh] w-full overflow-hidden border-x border-white/5",
                 isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
             )}>
