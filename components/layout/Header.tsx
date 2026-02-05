@@ -17,7 +17,7 @@ export function Header() {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <header className="fixed top-0 w-full z-50 flex items-center justify-between px-5 md:px-16 py-4 md:py-6 backdrop-blur-2xl border-b border-neon-red/10 bg-black/90">
+        <header className="fixed top-0 w-full z-[110] flex items-center justify-between px-5 md:px-16 py-4 md:py-6 backdrop-blur-2xl border-b border-neon-red/10 bg-black/95">
             <Link href="/" onClick={() => setIsOpen(false)}>
                 <div className="font-brand text-base md:text-2xl text-neon-red text-shadow-neon-lg animate-neon-pulse z-50 relative tracking-[0.2em]">
                     GRID
@@ -39,12 +39,12 @@ export function Header() {
 
             {/* Navigation Overlay */}
             <div className={cn(
-                "fixed inset-0 bg-black/40 backdrop-blur-[40px] backdrop-saturate-150 z-40 flex flex-col items-center justify-center transition-all duration-500",
-                "h-[100dvh] w-full overflow-hidden border-x border-white/5",
+                "fixed inset-0 bg-black/60 backdrop-blur-[80px] backdrop-saturate-200 z-[105] flex flex-col items-center justify-center transition-all duration-500",
+                "h-[100dvh] w-full overflow-hidden border-x border-white/10",
                 isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
             )}>
                 {/* Background Glass Accent */}
-                <div className="absolute inset-0 bg-gradient-radial from-white/5 to-transparent opacity-50" />
+                <div className="absolute inset-0 bg-gradient-radial from-white/5 to-transparent opacity-40" />
                 <div className="absolute inset-0 bg-cyber-grid bg-grid opacity-10" />
 
                 {/* Visual Accent Lines */}
@@ -68,10 +68,9 @@ export function Header() {
                                         href={item.href}
                                         onClick={() => setIsOpen(false)}
                                         className={cn(
-                                            "text-2xl sm:text-4xl font-heading uppercase tracking-[0.2em] transition-all duration-300 block py-2",
-                                            isActive
-                                                ? "text-neon-red text-shadow-neon-lg scale-110"
-                                                : "text-text-main hover:text-neon-red opacity-80 hover:opacity-100"
+                                            "text-2xl sm:text-5xl font-heading uppercase tracking-[0.25em] transition-all duration-300 block py-3",
+                                            "text-white/90 text-shadow-neon-sm hover:text-white hover:text-shadow-neon hover:scale-105",
+                                            isActive && "text-neon-red text-shadow-neon-lg scale-110 opacity-100"
                                         )}
                                     >
                                         <span className="inline-block relative">

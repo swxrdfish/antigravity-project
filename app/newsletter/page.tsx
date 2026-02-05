@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { SubscriptionForm } from "@/components/newsletter/SubscriptionForm";
 
 export const metadata: Metadata = {
-    title: "Newsletter | SXRDFISH",
-    description: "Subscribe for updates on AI, Tech, and Future Trends",
+    title: "SUB | GRID",
+    description: "Subscribe for mission critical updates on AI and Tech",
 };
 
 export default function NewsletterPage() {

@@ -3,8 +3,8 @@ import { GlitchText } from "@/components/ui/GlitchText";
 import { Card } from "@/components/ui/Card";
 
 export const metadata: Metadata = {
-    title: "Creation | SXRDFISH",
-    description: "Deployed systems and creative projects",
+    title: "CREATION | GRID",
+    description: "Deployed systems and creative projects by SXRDFISH",
 };
 
 const projects = [

@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { ProfileDisplay } from "@/components/identity/ProfileDisplay";
 
 export const metadata: Metadata = {
-    title: "IOI | SXRDFISH",
-    description: "Identity verification and contact information",
+    title: "IOI | GRID",
+    description: "Identity verification and core protocols",
 };
 
 export default function IOIPage() {
