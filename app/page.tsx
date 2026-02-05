@@ -1,23 +1,37 @@
 import { GlitchText } from "@/components/ui/GlitchText";
-import { Card } from "@/components/ui/Card";
+import { TabIsland } from "@/components/ui/TabIsland";
 
 export default function HomePage() {
     const services = [
         {
             title: "AI AUTOMATION",
-            description: "Streamlining workflows with intelligent agents and systems.",
+            tag: "AGENTIC",
+            description: "Streamlining complex workflows with intelligent agents and automated systems.",
         },
         {
             title: "BRAND BUILDING",
-            description: "Forging identities that resonate in the digital noise.",
+            tag: "IDENTITY",
+            description: "Forging distinctive digital identities that resonate in the hyper-connected noise.",
         },
         {
             title: "UX/UI DESIGN",
-            description: "Interfaces that feel like the future, today.",
+            tag: "INTERFACE",
+            description: "Crafting interfaces that feel like the future—obsessively minimal and high-performance.",
         },
         {
             title: "WEB DEV",
-            description: "Full-stack dynamic platforms built for scale.",
+            tag: "STACK",
+            description: "Full-stack dynamic platforms built for scale, speed, and seamless interaction.",
+        },
+        {
+            title: "MOTION SYSTEMS",
+            tag: "DYNAMIC",
+            description: "Bringing digital environments to life with high-fidelity motion and glitch-inspired visual effects.",
+        },
+        {
+            title: "IDENTITY ARCHITECTURE",
+            tag: "SECURE",
+            description: "Architecting secure, encrypted personal presences with refined digital-first security protocols.",
         },
     ];
 
@@ -38,15 +52,24 @@ export default function HomePage() {
 
             {/* Services Section */}
             <div className="max-w-6xl mx-auto px-6 md:px-8 py-20 md:py-32">
-                <h2 className="font-heading text-2xl md:text-3xl uppercase tracking-[0.3em] mb-12 md:mb-16 text-center md:text-left">
-                    CORE SERVICES
-                </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+                <header className="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-16 gap-4">
+                    <h2 className="font-heading text-2xl md:text-3xl uppercase tracking-[0.3em] text-center md:text-left">
+                        CORE SERVICES
+                    </h2>
+                    <div className="text-[10px] tracking-[0.4em] text-text-dim uppercase text-center md:text-right">
+                        System capacity: Optimal • Services: 06
+                    </div>
+                </header>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
                     {services.map((service) => (
-                        <Card key={service.title} className="bg-black/90 border border-neutral-800 p-6 md:p-8 backdrop-blur-sm">
-                            <h3 className="text-neon-red font-heading text-base md:text-lg mb-4 tracking-wider">{service.title}</h3>
-                            <p className="text-text-dim text-sm leading-relaxed">{service.description}</p>
-                        </Card>
+                        <TabIsland
+                            key={service.title}
+                            title={service.title}
+                            tag={service.tag}
+                        >
+                            <p>{service.description}</p>
+                        </TabIsland>
                     ))}
                 </div>
             </div>
